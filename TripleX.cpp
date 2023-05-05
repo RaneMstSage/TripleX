@@ -39,16 +39,16 @@ void PrintWelcome()
     std::cout << std::endl;                                                                                                                                                                                        
 }
 
-void PrintIntroduction()
+void PrintIntroduction(int Difficulty)
 {
     // Print Game Story
-    std::cout << "You are a Secret Agent for the Government infilitrating an Enemy Base...\n";
-    std::cout << "You will need to enter the correct code in order to make it through....\n\n";
+    std::cout << "You are a Secret Agent for the Government infilitrating a level " << Difficulty;
+    std::cout << " secure server room of an Enemy Base...\nYou will need to enter the correct code in order to make it through....\n\n";
 }
 
-bool PlayGame()
+bool PlayGame(int Difficulty)
 {  
-    PrintIntroduction();
+    PrintIntroduction(Difficulty);
 
     const int CodeA = 4;
     const int CodeB = 3;
@@ -86,11 +86,19 @@ int main()
 {
     PrintWelcome();
 
+    int LevelDifficulty = 1;
+
     while (true)
     {
-        bool bLevelComplete = PlayGame();
+        bool bLevelComplete = PlayGame(LevelDifficulty);
         std::cin.clear(); // Clears any errors
         std::cin.ignore(); // Discards the buffer
+
+        if (bLevelComplete)
+        {
+            ++LevelDifficulty;
+        }
+        
     }
     
     return 0;
