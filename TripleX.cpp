@@ -107,5 +107,5 @@ int main()
 
     std::cout << "\n*** You were able to succefully able to get the files! Your government thanks you for your service! Now get out of there! ***\n";
     
-    return 0;
+    return 10;
 }
