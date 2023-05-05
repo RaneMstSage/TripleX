@@ -3,22 +3,23 @@
 int main()
 {
     // Print Game Welcome Message
-    std::cout << "You are a Secret Agent for the Government infilitrating an Enemy Base...";
+    std::cout << "You are a Secret Agent for the Government infilitrating an Enemy Base..." << std::endl;
+    std::cout << "You will need to enter the correct code in order to make it through...." << std::endl;
+
+    const int CodeA = 4;
+    const int CodeB = 3;
+    const int CodeC = 2;
+
+    const int CodeSum = CodeA + CodeB + CodeC;
+    const int CodeProduct = CodeA * CodeB * CodeC;
+
+    // Print CodeSum and CodeProduct to the Terminal
     std::cout << std::endl;
-    std::cout << "You will need to enter the code in order to make it through....";
+    std::cout << "+ There are three numbers in the code" << std::endl;
+    std::cout << "+ The codes add-up to: " << CodeSum << std::endl;
+    std::cout << "+ The codes multiply to give: " << CodeProduct <<std::endl;
 
-    // Declare the 3 number code
-    const int a = 4;
-    const int b = 3;
-    const int c = 2;
-
-    const int sum = a + b + c;
-    const int product = a * b * c;
-
-    // Print Sum and Product to the Terminal
-    std::cout << std::endl;
-    std::cout << sum << std::endl;
-    std::cout << product;
+    int PlayerGuess;
 
     return 0;
 }
