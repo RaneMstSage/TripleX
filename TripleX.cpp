@@ -50,9 +50,9 @@ bool PlayGame(int Difficulty)
 {  
     PrintIntroduction(Difficulty);
 
-    const int CodeA = 4;
-    const int CodeB = 3;
-    const int CodeC = 2;
+    const int CodeA = rand();
+    const int CodeB = rand();
+    const int CodeC = rand();
 
     const int CodeSum = CodeA + CodeB + CodeC;
     const int CodeProduct = CodeA * CodeB * CodeC;
@@ -72,12 +72,12 @@ bool PlayGame(int Difficulty)
     // Check if the Player's guess is correct
     if (GuessSum == CodeSum && GuessProduct == CodeProduct)
     {
-        std::cout << "\nYou win!!\n\n";
+        std::cout << "\n*** You were able to decipher the code and move on to the next room!! ***\n\n";
         return true;
     }
     else
     {
-        std::cout << "\nYou have failed this city!\n\n";
+        std::cout << "\n*** That code was wrong, you go back to double check your decipher tool to try again! ***\n\n";
         return false;
     }
 }
@@ -87,8 +87,9 @@ int main()
     PrintWelcome();
 
     int LevelDifficulty = 1;
+    const int MaxDifficulty = 10;
 
-    while (true)
+    while (LevelDifficulty <= MaxDifficulty) // Loop Game until all levels are completed
     {
         bool bLevelComplete = PlayGame(LevelDifficulty);
         std::cin.clear(); // Clears any errors
@@ -100,6 +101,8 @@ int main()
         }
         
     }
+
+    std::cout << "\n*** You were able to succefully able to get the files! Your government thanks you for your service! Now get out of there! ***\n";
     
     return 0;
 }
